@@ -106,6 +106,10 @@ void init_rx(const uint8_t* seed_hash_data, xmrig::Algorithm::Id algo) {
             case 20:
                 randomx_apply_config(RandomX_SafexConfig);
                 break;
+            // for QRL cache, use different algo
+            case 21:
+                randomx_apply_config(RandomX_MoneroConfig);
+                break;
             default:
                 throw std::domain_error("Unknown RandomX algo");
         }
